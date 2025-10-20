@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base target="_top">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Quick Start - Leaflet</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.leaflet-container {
+			height: 400px;
+			width: 600px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	</style>
+
+	
+</head>
+<body>
+
+
+
+<div id="map" style="width: 600px; height: 400px;"></div>
+<script>
+
+	const map = L.map('map').setView([33.97949955023085, -6.864420288896676], 13);
+
+	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+
+	
+     
+
+	const polygon = L.polygon([
+		[33.9752051303593, -6.865945192419427],
+		[33.97502268324885,-6.8656578562797055],
+		[33.97479147815855, -6.865872173004381],
+                [33.97499830451047, -6.866132008325449],
+	]).addTo(map).bindPopup('Dep agro.');
+
+        const polygon2 = L.polygon([
+		[33.97365578555416, -6.866792822236869],
+		[33.97354355903733, -6.866618024091089],
+		[33.97344910160422, -6.866708242488911],
+                [33.97355852258146, -6.866881912904719],
+        ]).addTo(map).bindPopup('Dep de Virologie.');
+
+        const polygon3 = L.polygon([
+		[33.974205518811864, -6.868937417075312],
+		[33.974034079436414, -6.868679478362426],
+		[33.97386483470519, -6.868857140062631],
+                [33.97403412708832, -6.869113911077208],
+        ]).addTo(map).bindPopup('Clinique.');
+        
+        const polygon4 = L.polygon([
+		[33.97701242625554, -6.865879962273636],
+		[33.9767898286209, -6.865764921575441],
+		[33.97672168637134, -6.866035541122624],
+                [33.97694519274569, -6.866123191178393],
+        ]).addTo(map).bindPopup('Dept géomatique.');
+          
+        const polygon5 = L.polygon([
+		[33.97722907315908, -6.866530339864868],
+		[33.97722510552179, -6.866370854762646],
+		[33.977273378429395, -6.866262404893137],
+                [33.97712591452972, -6.866133221960339],
+                [33.97700622391191, -6.866327793785048],
+                [33.97722907315908, -6.866531137290378],
+        ]).addTo(map).bindPopup('Dep de forestère.');
+       
+        const polygon6 = L.polygon([
+		[33.97730078163786, -6.866038209229796],
+		[33.97738474688465, -6.865916168719619],
+		[33.97735416352623, -6.865884652763695],
+                [33.97739364385958, -6.865823632508607],
+                [33.97728688009892, -6.865721708566042],
+		[33.97728688009892, -6.865722379118295],
+                [33.97718790107607, -6.865866547852845],
+                [33.977214035997775, -6.865894040495247],
+		[33.97719234957394, -6.8659295797646935],
+
+        ]).addTo(map).bindPopup('Dept Gr.');
+
+        const polygon7 = L.polygon([
+		[33.97912386650784, -6.864270568074277],
+		[33.978976552787216, -6.864054851849314],
+		[33.97882761997501, -6.864203217759696],
+                [33.97897250570339, -6.864418933984658],
+        ]).addTo(map).bindPopup('Dept de stage.');
+
+	const polygon8 = L.polygon([
+		[33.97517991131843, -6.865978276878265],
+		[33.974999205826435, -6.865705444194563],
+		[33.97481136624987, -6.865882404005742],
+                [33.97499773833135, -6.866165539703628]
+	]).addTo(map).bindPopup('Salle Halieutique');
+
+	const polygon9 = L.polygon([
+		[33.974816638767855, -6.866504300364374],
+		[33.974683978257445, -6.866638191887153],
+		[33.974615515662315, -6.866535410966539],
+                [33.97476176433306, -6.866399959423393]
+	]).addTo(map).bindPopup('Salle Autopsie');
+	
+	const polygon10 = L.polygon([
+		[33.973970632866305, -6.8680122128259695],
+		[33.97380692763262, -6.868156903628624],
+		[33.97362568859671, -6.867877796480969],
+                [33.97346341082882, -6.8680448596078305],
+		[33.973344575990225, -6.867839685997434],
+		[33.97364706434358, -6.867562864459598]
+	]).addTo(map).bindPopup('Departement Veto');
+
+	const polygon11 = L.polygon([
+		[33.97420751119831, -6.868935138133913],
+		[33.9740361405891, -6.86867478581461],
+		[33.9738647696345, -6.868860418185772],
+                [33.974035172392576, -6.869113765509936]
+	]).addTo(map).bindPopup('Centre Hospitalier Universitaire Vétérinaire');
+
+	const polygon12 = L.polygon([
+		[33.97492946211004, -6.869570612942802],
+		[33.97486749816199, -6.869473710510056],
+		[33.97485297535513, -6.869487720500333],
+                [33.97481327967039, -6.869426166385077],
+		[33.97463236395827, -6.869594378915018],
+		[33.97473402034577, -6.869752550822008],
+		[33.974815181406576, -6.869674453442932],
+                [33.974799605047394, -6.869648750508046],
+                [33.97484551430841, -6.869606241808042],
+                [33.97486355008275, -6.869630956168509]
+	]).addTo(map).bindPopup('ONSA');
+
+	const polygon13 = L.polygon([
+		[33.97474926580127, -6.866149526133779],
+		[33.97458204210469, -6.865911610402741],
+		[33.97438113262213, -6.866101652856162],
+                [33.974536326214626, -6.8663395685871995]
+	]).addTo(map).bindPopup('Departement IAA');
+
+	const polygon14 = L.polygon([
+		[33.97511455705949, -6.86754134356044],
+		[33.97500667828381, -6.867372364407605],
+		[33.974909609594135, -6.867461809339944],
+                [33.97501793405353, -6.867630271067995]
+	]).addTo(map).bindPopup('Laboratoire Analyses Genetiques Veterinaire');
+
+	const polygon15 = L.polygon([
+		[33.97550904970726, -6.8669194284810375],
+		[33.97562426301775, -6.8668096835572054],
+		[33.97561942212548, -6.866801511062877],
+                [33.97564459476222, -6.866774658581514],
+		[33.975515826965136, -6.866576183719265],
+		[33.97551001788699, -6.866918260981847]
+	]).addTo(map).bindPopup('Laboratoire de controle Antidopage');
+
+        const marker1 = L.marker([33.98030511429884, -6.8643697389007725]).addTo(map)
+		.bindPopup('Parking administration.').openPopup();
+        const marker2 = L.marker([33.980395402285346, -6.8612074363862]).addTo(map)
+		.bindPopup('Mosquée.').openPopup();
+        const marker3 = L.marker([33.97534630784069, -6.868689737903827]).addTo(map)
+		.bindPopup('Club Harka.').openPopup();
+        const marker4 = L.marker([33.981032846734195, -6.863661537991518]).addTo(map)
+		.bindPopup('Parking Iav.').openPopup();
+
+	const circle = L.circle([33.9765768155563, -6.866415398246666], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.5,
+		radius: 500
+	}).addTo(map).bindPopup('IAV.');
+
+	
+
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent(`You clicked the map at ${e.latlng.toString()}`)
+			.openOn(map);
+	}
+
+	map.on('click', onMapClick);
+
+</script>
+
+
+
+</body>
+</html>
